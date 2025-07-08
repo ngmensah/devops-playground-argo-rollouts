@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: success-rate-prometheus
+spec:
+  metrics:
+    - name: success-rate
+      interval: 10s
+      successCondition: result[0] >= 0.95
+      failureCondition: result[0] < 0.95
+      provider:
+        prometheus:
+          address: http://prometheus.default.svc.cluster.local:9090
+          query: |
+            sum(rate(http_request_duration_seconds_count{status="200"}[1m]))
+            /
+            sum(rate(http_request_duration_seconds_count[1m]))
