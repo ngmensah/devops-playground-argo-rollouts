@@ -1,5 +1,4 @@
-```markdown
-# 🧯 Troubleshooting Tips
+## Troubleshooting Tips
 
 ## 🚫 Prometheus not scraping?
 
@@ -9,7 +8,7 @@
 kubectl get svc prometheus
 ```
 
-# Port might not match config. Use NodePort or ClusterIP correctly.
+Port might not match config. Use NodePort or ClusterIP correctly.
 
 ## ⏱ Analysis hangs forever?
 Check the analysis template’s success/failure conditions.
