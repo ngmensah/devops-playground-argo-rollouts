@@ -13,7 +13,10 @@ Port might not match config. Use NodePort or ClusterIP correctly.
 ## ⏱ Analysis hangs forever?
 Check the analysis template’s success/failure conditions.
 
-Job-based analysis may wait for Job to finish. Use kubectl get jobs.
+Job-based analysis may wait for Job to finish. Use: 
+```bash
+kubectl get jobs.
+```
 
 ## 🛑 Rollout doesn't progress?
 
