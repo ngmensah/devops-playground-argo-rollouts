@@ -1,13 +1,16 @@
+
+---
+
+### 📁 `extras/troubleshooting.md`
+
 ```markdown
 # 🧯 Troubleshooting Tips
 
 ### 🚫 Prometheus not scraping?
-```
 - Check service:
-
   ```bash
   kubectl get svc prometheus
-```
+
 
 # Port might not match config. Use NodePort or ClusterIP correctly.
 
