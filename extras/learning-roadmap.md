@@ -1,9 +1,3 @@
-
----
-
-### 📁 `extras/learning-roadmap.md`
-
-```markdown
 # 🧠 Learning Roadmap: After This Lab
 
 ## ✅ Core Concepts You Just Practiced
@@ -32,4 +26,3 @@
 
 ### 5. Kubernetes Certification
 - Study for CKA or CKS exams with real projects like this
-```
