@@ -65,3 +65,63 @@ kubectl apply -f argo/service.yaml
 kubectl apply -f analysis/analysis-template-prometheus.yaml
 kubectl apply -f argo/rollout.yaml
 ```
+
+---
+
+## Run a Failure Simulation
+
+```bash
+# Replace Prometheus analysis with job-based analysis
+kubectl apply -f analysis/analysis-template-job.yaml
+
+# Simulate a success
+kubectl apply -f analysis/success-job.yaml
+
+# Simulate a failure
+kubectl apply -f analysis/failure-job.yaml
+```
+
+## 📂 Project Structure
+
+```bash
+├── argo/           # Argo Rollouts YAML files
+├── app/            # Sample app versions
+├── analysis/       # AnalysisTemplates + Jobs
+├── prometheus/     # Prometheus + StatsD setup
+├── cluster/        # Kind config + cluster script
+├── setup/          # CLI tool installer
+├── extras/         # Learning roadmap, commands, troubleshooting
+└── assets/         # Diagrams & screenshots
+```
+
+## Helpful CLI Commands
+
+```bash
+# View rollout status
+kubectl argo rollouts get rollout rollouts-demo
+
+# Promote rollout manually
+kubectl argo rollouts promote rollouts-demo
+
+# Abort rollout
+kubectl argo rollouts abort rollouts-demo
+
+# View rollout history
+kubectl argo rollouts history rollouts-demo
+```
+
+## Bonus Learning
+[✔] extras/learning-roadmap.md → Next DevOps skills to learn
+
+[✔] extras/troubleshooting.md → Common errors and fixes
+
+[✔] extras/cli-commands.md → Useful kubectl & argo commands
+
+## Cleanup
+
+```bash
+kind delete cluster
+```
+
+Built by a DevOps learner, for DevOps learners.
+Questions? PRs welcome — let's grow together 🚀
