@@ -21,5 +21,16 @@ spec:
   strategy:
     canary:
       steps:
-        - setWeight: 50
+        - setWeight: 20
         - pause: { duration: 10s }
+        - analysis:
+            templates:
+              - templateName: success-rate-prometheus
+            args: []
+        - setWeight: 60
+        - pause: { duration: 10s }
+        - analysis:
+            templates:
+              - templateName: success-rate-prometheus
+
+# You can swap success-rate-prometheus with rollout-validation-job for Job-based testing.
