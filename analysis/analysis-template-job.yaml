@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  name: rollout-validation-job
+spec:
+  metrics:
+    - name: rollout-check
+      provider:
+        job:
+          spec:
+            template:
+              spec:
+                containers:
+                  - name: check
+                    image: busybox
+                    command: ["/bin/sh", "-c"]
+                    args: ["exit 0"]
+                restartPolicy: Never
