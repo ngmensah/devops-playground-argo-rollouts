@@ -10,6 +10,7 @@ Learn how to run real-world **Canary deployments** using [Argo Rollouts](https:/
 ✅ Argo Rollouts controller installed  
 ✅ Canary rollout with versioned app updates  
 ✅ Pre-promotion **AnalysisTemplate** using:
+
   ✔️ Prometheus metrics
   ✔️ Kubernetes Job (success/failure simulation)  
 ✅ Preconfigured Prometheus + StatsD exporter  
