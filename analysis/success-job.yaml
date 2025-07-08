@@ -1,0 +1,12 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: rollout-job-success
+spec:
+  template:
+    spec:
+      containers:
+        - name: test
+          image: busybox
+          command: ["sh", "-c", "echo All good! && exit 0"]
+      restartPolicy: Never
