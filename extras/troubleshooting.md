@@ -1,6 +1,6 @@
 ## Troubleshooting Tips
 
-## 🚫 Prometheus not scraping?
+### 🚫 Prometheus not scraping?
 
 - Check service:
 
